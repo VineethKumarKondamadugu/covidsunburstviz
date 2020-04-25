@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<script src="https://d3js.org/d3.v4.js"></script>
+<h2 align="center">LINE GRAPH COMPARISION OF COUNTRIES CASES BY WEEK</h2>
+<center>
+<div id="viz"></div>
+<div class = "radio-toolbar">
+  <select id="Button"></select>
+  <select id="modes" name="modes" align="right">
+    <option value="cases">Confirmed</option>
+    <option value="deaths">Deaths</option>
+    <option value="recovered">Recovered</option>
+  </select>
+  </div>
+  </center>
+  <center><button onclick="location.href = 'index.html';" id="myButton" class="float-left submit-button" >Go Back</button></center>
+<style>
+
+button {
+     background-color: darkseagreen;
+     border-radius: 8px;
+     border: 2px solid black;
+     color: black;
+     padding: 8px 25px;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+     margin: 4px 2px;
+     cursor: pointer;}
+
+button:hover {
+    background-color: crimson;
+    color: white;
+     }
+
+h2 {
+  background-color: darkseagreen;
+}
+
+div.tooltip {	
+    position: absolute;			
+    text-align: center;			
+    width: 150px;					
+    height: 30px;					
+    padding: 2px;				
+    font: 15px sans-serif;		
+    background: silver;	
+    border: 0px;		
+    border-radius: 8px;			
+    pointer-events: none;			
+}
+.radio-toolbar select {
+    background-color: darkseagreen;
+    color: black;
+    padding: 10px;
+    width: 150px;
+    border: 2px solid black;
+    border-radius: 8px;
+    font-size: 15px;
+    -webkit-appearance: button;
+    appearance: button;
+  }
+  
+  .radio-toolbar::before {
+    font-family: FontAwesome;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    font-size: 28px;
+    line-height: 45px;
+    color: black;
+    background-color:rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+  }
+  .radio-toolbar:hover::before {
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .radio-toolbar select option {
+    padding: 30px;
+  }
+
+</style>
+
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+
+<script>
+
+     var  width2 = 800;
+      var height2 = 700;
+  
+  var svgline = d3.select("#viz").append("svg")
+	.attr("width", width2)
+	.attr("height", height2)
+	.style("background", "lavender")
+	.style("stroke", "black")
+        .style("margin", "auto")
+        .style("border", "3px solid black").style("border-radius", "15px");
+
+   svgline.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y",5)
+      .attr("x",-325)
+      .attr("dy", "1em")
+      .attr("font-size", "18px")
+      .style("text-anchor", "middle")
+      .text("Number of Cases");
+
+   svgline.append("text")             
+      .attr("transform","translate(325,670)")
+      .attr("font-size", "18px")
+      .style("text-anchor", "middle")
+      .text("Weeks");
+  
+
+  d3.csv("data2.csv", function(data) {
+
+      var allGroup = d3.map(data, function(d){return(d.continent)}).keys()
+
+      d3.select("#Button")
+        .selectAll('myOptions')
+         .data(allGroup)
+        .enter()
+        .append('option')
+        .text(function (d) { return d; })
+        .attr("value", function (d) { return d; })
+  
+      
+      var myColor = d3.scaleOrdinal(d3.schemeTableau10);
+  
+      var x2 = d3.scaleLinear()
+        .domain(d3.extent(data, function(d) { return +d.week; }))
+        .range([ 70, width2-70 ]);
+
+      svgline.append("g")
+        .attr("transform", "translate(0,630)")
+        .call(d3.axisBottom(x2).ticks(7));
+  
+      var y2 = d3.scaleLinear()
+        //.domain([0, d3.max(allGroup[0], function(d) { return +d.deaths; })])
+        .range([ height2-70, 70 ]);
+
+      var g = svgline.append("g")
+      .attr("transform", "translate(70,0)") ;
+  
+      var s = d3.select("#modes").property("value"); 
+      console.log(s)
+
+  update("Asia");
+    
+  function update(selectedGroup) {
+  
+  svgline.selectAll("circle").remove();
+  //svgline.selectAll("text").remove();
+  var Tooltip = d3.select("#viz")
+      .append("div")
+      .style("opacity", 0)
+      .attr("class", "tooltip")
+      .style("background-color", "white")
+      .style("border", "solid")
+      .style("border-width", "2px")
+      .style("border-radius", "5px")
+      .style("padding", "5px")
+
+      
+  var mouseoverr = function(d) {
+        Tooltip
+          .style("opacity", 1)
+      }
+  var mouseleavee = function(d) {
+        Tooltip
+          .style("opacity", 0)
+      }
+  var mousemovee = function(d) { console.log(d);
+        Tooltip
+          .html("Confirmed: " + d.cases)
+          .style("left", (d3.mouse(this)[0]+400) + "px")
+          .style("top", (d3.mouse(this)[1]) + "px")
+      }
+  var mousemoved = function(d) { console.log(d);
+        Tooltip
+          .html("Deaths: " + d.deaths)
+          .style("left", (d3.mouse(this)[0]+400) + "px")
+          .style("top", (d3.mouse(this)[1]) + "px")
+      }
+ var mousemover = function(d) { console.log(d);
+        Tooltip
+          .html("Recovered: " + d.recovered)
+          .style("left", (d3.mouse(this)[0]+400) + "px")
+          .style("top", (d3.mouse(this)[1]) + "px")
+      }
+
+  if(s == "cases"){
+    
+      var dataFilter = data.filter(function(d){return d.continent==selectedGroup})
+       console.log(dataFilter)
+
+       var sumstat = d3.nest()
+      .key(function(d) { return d.country;})
+      .entries(dataFilter); 
+      console.log(sumstat)
+
+        y2.domain([0, d3.max(dataFilter, function(d) { return +d.cases; })]);
+        g.call(d3.axisLeft(y2));
+  
+        
+      var line = svgline.selectAll(".line").data(sumstat);
+      line.enter().append("path").merge(line)
+        .attr("class","line")
+        .attr("fill", "none")
+        .attr("stroke", function(d){ return myColor(d.key) })
+        .attr("stroke-width", 4)
+        .attr("d", function(d){
+          return d3.line()
+            .curve(d3.curveBasis)
+            .x(function(d) {return x2(+d.week); })
+            .y(function(d) { return y2(+d.cases); })
+            (d.values)
+        })
+      line.exit().remove();
+
+      var chart= svgline.selectAll('.series-labels').data(sumstat)
+       chart.enter().append('text').merge(chart)
+       .attr('x', d => x2(d.values[d.values.length-1].week)+10)
+       .attr('y', d => y2(d.values[d.values.length-1].cases))
+       .text(d => d.key)
+       .style('dominant-baseline', 'central')
+       .style('font-size','0.8em')
+       .style('font-weight', 'bold')
+       .style('fill', d => myColor(d.key))
+       .style('stroke', 'none')
+       .classed("series-labels","true")
+
+       chart.exit().remove();
+
+    
+    var  dots = svgline.selectAll("myDots")
+      .data(sumstat)
+      .enter()
+        .append('g')
+        .style("fill", function(d){ return myColor(d.key) })
+        .attr("class", function(d){ return d.key });
+      dots.selectAll("myPoints")
+      .data(function(d){return d.values;})
+      .enter().append("circle")
+        //.attr("class", "circle")
+        .attr("cx", function(d,i) { return x2(+d.week)})
+        .attr("cy", function(d,i) { return y2(+d.cases)})
+        .attr("r", 6)
+        .attr("stroke", "#69b3a2")
+        .attr("stroke-width", 3)
+        .attr("fill", "white")
+        .on("mouseover", mouseoverr)
+        .on("mousemove", mousemovee)
+        .on("mouseleave", mouseleavee)
+
+      }
+
+    else if(s == "deaths"){
+      var dataFilter = data.filter(function(d){return d.continent==selectedGroup})
+       console.log(dataFilter)
+
+       var sumstat = d3.nest()
+      .key(function(d) { return d.country;})
+      .entries(dataFilter); 
+      console.log(sumstat)
+
+        y2.domain([0, d3.max(dataFilter, function(d) { return +d.deaths; })]);
+        g.call(d3.axisLeft(y2));
+  
+        
+      var line = svgline.selectAll(".line").data(sumstat);
+      line.enter().append("path").merge(line)
+        .attr("class","line")
+        .attr("fill", "none")
+        .attr("stroke", function(d){ return myColor(d.key) })
+        .attr("stroke-width", 4)
+        .attr("d", function(d){
+          return d3.line()
+            .curve(d3.curveBasis)
+            .x(function(d) {return x2(+d.week); })
+            .y(function(d) { return y2(+d.deaths); })
+            (d.values)
+        })
+      line.exit().remove();
+
+      var chart= svgline.selectAll('.series-labels').data(sumstat)
+       chart.enter().append('text').merge(chart)
+       .attr('x', d => x2(d.values[d.values.length-1].week)+10)
+       .attr('y', d => y2(d.values[d.values.length-1].deaths))
+       .text(d => d.key)
+       .style('dominant-baseline', 'central')
+       .style('font-size','0.8em')
+       .style('font-weight', 'bold')
+       .style('fill', d => myColor(d.key))
+       .style('stroke', 'none')
+       .classed("series-labels","true")
+
+       chart.exit().remove();
+
+     var  dots = svgline.selectAll("myDots")
+      .data(sumstat)
+      .enter()
+        .append('g')
+        .style("fill", function(d){ return myColor(d.key) })
+        .attr("class", function(d){ return d.key })
+      .selectAll("myPoints")
+      .data(function(d){return d.values;})
+      .enter().append("circle")
+        //.attr("class", "circle")
+        .attr("cx", function(d,i) { return x2(+d.week)})
+        .attr("cy", function(d,i) { return y2(+d.deaths)})
+        .attr("r", 6)
+        .attr("stroke", "#69b3a2")
+        .attr("stroke-width", 3)
+        .attr("fill", "white")
+        .on("mouseover", mouseoverr)
+        .on("mousemove", mousemoved)
+        .on("mouseleave", mouseleavee)
+
+      }
+
+   else{
+      var dataFilter = data.filter(function(d){return d.continent==selectedGroup})
+       console.log(dataFilter)
+
+       var sumstat = d3.nest()
+      .key(function(d) { return d.country;})
+      .entries(dataFilter); 
+      console.log(sumstat)
+
+        y2.domain([0, d3.max(dataFilter, function(d) { return +d.recovered; })]);
+        g.call(d3.axisLeft(y2));
+  
+        
+      var line = svgline.selectAll(".line").data(sumstat);
+      line.enter().append("path").merge(line)
+        .attr("class","line")
+        .attr("fill", "none")
+        .attr("stroke", function(d){ return myColor(d.key) })
+        .attr("stroke-width", 4)
+        .attr("d", function(d){
+          return d3.line()
+            .curve(d3.curveBasis)
+            .x(function(d) {return x2(+d.week); })
+            .y(function(d) { return y2(+d.recovered); })
+            (d.values)
+        })
+      line.exit().remove();
+
+      var chart= svgline.selectAll('.series-labels').data(sumstat)
+       chart.enter().append('text').merge(chart)
+       .attr('x', d => x2(d.values[d.values.length-1].week)+10)
+       .attr('y', d => y2(d.values[d.values.length-1].recovered))
+       .text(d => d.key)
+       .style('dominant-baseline', 'central')
+       .style('font-size','0.8em')
+       .style('font-weight', 'bold')
+       .style('fill', d => myColor(d.key))
+       .style('stroke', 'none')
+       .classed("series-labels","true")
+
+       chart.exit().remove();
+
+    
+    var  dots = svgline.selectAll("myDots")
+      .data(sumstat)
+      .enter()
+        .append('g')
+        .style("fill", function(d){ return myColor(d.key) })
+        .attr("class", function(d){ return d.key })
+      .selectAll("myPoints")
+      .data(function(d){return d.values;})
+      .enter().append("circle")
+        //.attr("class", "circle")
+        .attr("cx", function(d,i) { return x2(+d.week)})
+        .attr("cy", function(d,i) { return y2(+d.recovered)})
+        .attr("r", 6)
+        .attr("stroke", "#69b3a2")
+        .attr("stroke-width", 3)
+        .attr("fill", "white")
+        .on("mouseover", mouseoverr)
+        .on("mousemove", mousemover)
+        .on("mouseleave", mouseleavee)
+
+    
+      }
+
+   }
+   
+   var selectedOption = "Asia";
+      // When the button is changed, run the updateChart function
+      d3.select("#Button").on("change", function(d) {
+          // recover the option that has been chosen
+          selectedOption = d3.select(this).property("value")
+          // run the updateChart function with this selected option
+          update(selectedOption);
+      })
+      
+      d3.select("#modes").on("change", function(d) {
+          s = d3.select(this).property("value")
+          update(selectedOption);
+      })
+  
+  })
+  
+  </script>

@@ -1,0 +1,637 @@
+[{		
+    "name": "Covid cases",		
+    "children": [{		
+            "name": "Asia",		
+            "children": [		
+		{   "name": "Afghanistan", "cases": 4,"death":0,"recovered":0},
+		{   "name": "Bangladesh", "cases": 3,"death":0,"recovered":0},
+		{   "name": "China", "cases": 80823,"death":3100,"recovered":57388},
+		{   "name": "India", "cases": 39,"death":0,"recovered":3},
+		{   "name": "Indonesia", "cases": 6,"death":0,"recovered":0},
+		{   "name": "Iran", "cases": 6566,"death":194,"recovered":2134},
+		{   "name": "Iraq", "cases": 60,"death":6,"recovered":0},
+		{   "name": "Israel", "cases": 61,"death":0,"recovered":2},
+		{   "name": "Japan", "cases": 502,"death":6,"recovered":76},
+		{   "name": "Kazakhstan", "cases": 0,"death":0,"recovered":0},
+		{   "name": "South Korea", "cases": 7314,"death":50,"recovered":118},
+		{   "name": "Kuwait", "cases": 64,"death":0,"recovered":1},
+		{   "name": "Malaysia", "cases": 99,"death":0,"recovered":24},
+		{   "name": "Pakistan", "cases": 6,"death":0,"recovered":1},
+		{   "name": "Philippines", "cases": 10,"death":1,"recovered":1},
+		{   "name": "Qatar", "cases": 15,"death":0,"recovered":0},
+		{   "name": "Russia", "cases": 17,"death":0,"recovered":3},
+		{   "name": "Saudi Arabia", "cases": 11,"death":0,"recovered":0},
+		{   "name": "Singapore", "cases": 150,"death":0,"recovered":78},
+		{   "name": "Sri Lanka", "cases": 1,"death":0,"recovered":1},
+		{   "name": "Thailand", "cases": 50,"death":1,"recovered":31},
+		{   "name": "United Arab Emirates", "cases": 45,"death":1,"recovered":7},
+		{   "name": "Uzbekistan", "cases": 0,"death":0,"recovered":0}]
+	     },	
+	     {	
+            "name": "Africa",		
+            "children": [		
+		{   "name": "Algeria", "cases": 19,"death":0 ,"recovered":0},
+		{   "name": "Benin", "cases": 0,"death":0,"recovered":0},
+		{   "name": "Zambia", "cases": 15,"death":0,"recovered":0},
+		{   "name": "Zimbabwe", "cases": 12,"death":0,"recovered":0},
+		{   "name": "Namibia", "cases": 23,"death":3,"recovered":0},
+		{   "name": "Cameroon", "cases": 2,"death":0,"recovered":0},
+		{   "name": "CAR", "cases": 0,"death":0,"recovered":0},
+		{   "name": "Congo ", "cases": 0,"death":0,"recovered":0},
+		{   "name": "Egypt", "cases": 49,"death":1,"recovered":1},
+		{   "name": "Ghana", "cases": 0,"death":0,"recovered":0},
+		{   "name": "Morocco", "cases": 2,"death":0,"recovered":0},
+		{   "name": "South Africa", "cases": 3,"death":0,"recovered":0},
+		{   "name": "Tunisia", "cases": 2,"death":1,"recovered":0}]
+	     },	
+	     {	
+            "name": "Europe",		
+            "children": [		
+		{    "name": "Austria", "cases": 104,"death":0,"recovered":0},
+		{    "name": "Belgium", "cases": 200,"death":0,"recovered":1},
+		{    "name": "Croatia", "cases": 12,"death":0,"recovered":0},
+		{    "name": "Denmark", "cases": 37,"death":0,"recovered":1},
+		{    "name": "Finland", "cases": 23,"death":0,"recovered":1},
+		{    "name": "France", "cases": 1136,"death":19,"recovered":12},
+		{    "name": "Germany", "cases": 1040,"death":0,"recovered":18},
+		{    "name": "Iceland", "cases": 50,"death":0,"recovered":0},
+		{    "name": "Ireland", "cases": 19,"death":0,"recovered":0 },
+		{    "name": "Italy", "cases": 7375,"death":366,"recovered":622 },
+		{    "name": "Moldova", "cases": 1,"death":0,"recovered":0 },
+		{    "name": "Netherlands", "cases": 265,"death":3,"recovered":0 },
+		{    "name": "Norway", "cases": 176,"death":0,"recovered":0 },
+		{    "name": "Poland", "cases": 11,"death":0,"recovered":0},
+		{    "name": "Portugal", "cases": 30,"death":0,"recovered":0 },
+		{    "name": "Spain", "cases": 673,"death":17,"recovered": 30},
+		{    "name": "Sweden", "cases": 203,"death":0,"recovered":0 },
+		{    "name": "Switzerland", "cases": 337,"death":2 ,"recovered":3},
+		{    "name": "Turkey", "cases": 0,"death":0,"recovered":0 },
+		{    "name": "Ukraine", "cases": 1,"death":0 ,"recovered":0},
+		{    "name": "United Kingdom", "cases": 274,"death":3,"recovered":18 }]
+	   },	
+	   {	
+            "name": "North America",		
+            "children": [		
+		{    "name": "Barbados", "cases": 0,"death":0,"recovered":0 },
+		{    "name": "Canada", "cases": 64,"death":0,"recovered":8 },
+		{    "name": "Costa Rica", "cases": 5,"death":0,"recovered":0 },
+		{    "name": "Cuba", "cases": 0,"death":0,"recovered":0 },
+		{    "name": "Dominican Republic", "cases": 5,"death":0,"recovered":0 },
+		{    "name": "Mexico", "cases": 7,"death":0,"recovered":1 },
+		{    "name": "Panama", "cases": 0,"death":0,"recovered":0 },
+		{    "name": "US", "cases": 518,"death":0,"recovered":7 }]
+	   }, 	
+	   {	
+            "name": "South America",		
+            "children": [		
+		{   "name": "Argentina", "cases": 12,"death":1 ,"recovered":0},
+		{   "name": "Bolivia", "cases": 0,"death":0,"recovered":0 },
+		{   "name": "Brazil", "cases": 90,"death":0,"recovered":0 },
+		{   "name": "Chile", "cases": 8,"death":0,"recovered":0 },
+		{   "name": "Diamond Princess", "cases": 706,"death":58,"recovered":72 },
+		{   "name": "Colombia", "cases": 1,"death":0,"recovered":0 },
+		{   "name": "Ecuador", "cases": 14,"death":0,"recovered":0 },
+		{   "name": "Peru", "cases": 6,"death":0,"recovered":0 },
+		{   "name": "Uruguay", "cases": 0,"death":0,"recovered":0 },
+		{   "name": "Venezuela", "cases": 0,"death":0,"recovered":0 }]
+	  },	
+	  {	
+            "name": "Oceania",		
+            "children": [		
+		{ "name": "Australia", "cases": 76,"death":3,"recovered":21 },
+		{ "name": "New Zealand", "cases": 5,"death":0,"recovered":0 }]
+	  }   	
+ ]		
+		
+},		
+{		
+    "name": "Covid cases",		
+    "children": [{		
+            "name": "Asia",		
+            "children": [		
+		{   "name": "Afghanistan", "cases": 16,"death":0,"recovered":0},
+		{   "name": "Bangladesh", "cases": 5,"death":0,"recovered":0},
+		{   "name": "China", "cases": 81003,"death":3203,"recovered":67017 },
+		{   "name": "India", "cases": 113,"death":2,"recovered":13 },
+		{   "name": "Indonesia", "cases": 117,"death":5,"recovered":8 },
+		{   "name": "Iran", "cases": 13938,"death":724,"recovered":4590 },
+		{   "name": "Iraq", "cases": 116,"death":10,"recovered":26 },
+		{   "name": "Israel", "cases": 213,"death":0,"recovered":4 },
+		{   "name": "Japan", "cases": 839,"death":22,"recovered":118 },
+		{   "name": "Kazakhstan", "cases": 9,"death":0,"recovered":0 },
+		{   "name": "South Korea", "cases": 8162,"death":75,"recovered":510 },
+		{   "name": "Kuwait", "cases": 112,"death":0,"recovered":5 },
+		{   "name": "Malaysia", "cases": 428,"death":0,"recovered":42 },
+		{   "name": "Pakistan", "cases": 53,"death":0,"recovered":2 },
+		{   "name": "Philippines", "cases": 140,"death":11,"recovered":2 },
+		{   "name": "Qatar", "cases": 401,"death":0,"recovered":4 },
+		{   "name": "Russia", "cases": 63,"death":0,"recovered":8 },
+		{   "name": "Saudi Arabia", "cases": 103,"death":11,"recovered":1 },
+		{   "name": "Singapore", "cases": 226,"death":0,"recovered":105 },
+		{   "name": "Sri Lanka", "cases": 18,"death":0,"recovered":1 },
+		{   "name": "Thailand", "cases": 114,"death":1,"recovered":35 },
+		{   "name": "United Arab Emirates", "cases": 98,"death":0,"recovered":23 },
+		{   "name": "Uzbekistan", "cases": 1,"death":0,"recovered":0 }]
+	     },	
+	     {	
+            "name": "Africa",		
+            "children": [		
+		{   "name": "Algeria", "cases": 48,"death":4,"recovered":12 },
+		{   "name": "Benin", "cases": 0,"death":0,"recovered":0 },
+		{   "name": "Cameroon", "cases": 2,"death":0,"recovered":0 },
+		{   "name": "Zambia", "cases": 24,"death":1,"recovered":0 },
+		{   "name": "Zimbabwe", "cases": 18,"death":1,"recovered":0 },
+		{   "name": "Namibia", "cases": 32,"death":3,"recovered":0 },
+		{   "name": "CAR", "cases": 1,"death":0,"recovered":0 },
+		{   "name": "Congo ", "cases": 3,"death":0,"recovered":0 },
+		{   "name": "Egypt", "cases": 110,"death":2,"recovered":21 },
+		{   "name": "Ghana", "cases": 6,"death":0,"recovered":0 },
+		{   "name": "Morocco", "cases": 28,"death":1,"recovered":1 },
+		{   "name": "South Africa", "cases": 51,"death":0,"recovered":0 },
+		{   "name": "Tunisia", "cases": 18,"death":0,"recovered":0 }]
+	     },	
+	     {	
+            "name": "Europe",		
+            "children": [		
+		{    "name": "Austria", "cases": 860,"death":1,"recovered":6 },
+		{    "name": "Belgium", "cases": 886,"death":4,"recovered":1 },
+		{    "name": "Croatia", "cases": 49,"death":0,"recovered":1 },
+		{    "name": "Denmark", "cases": 875,"death":2,"recovered":1 },
+		{    "name": "Finland", "cases": 244,"death":0,"recovered":10 },
+		{    "name": "France", "cases": 4532,"death":91,"recovered":12 },
+		{    "name": "Germany", "cases": 5795,"death":11,"recovered":46 },
+		{    "name": "Iceland", "cases": 171,"death":5,"recovered":8 },
+		{    "name": "Ireland", "cases": 129,"death":2,"recovered":0 },
+		{    "name": "Italy", "cases": 24747,"death":1809,"recovered":2335 },
+		{    "name": "Moldova", "cases": 23,"death":0,"recovered":0 },
+		{    "name": "Netherlands", "cases": 1138,"death":20,"recovered":2 },
+		{    "name": "Norway", "cases": 1221,"death":3,"recovered":1 },
+		{    "name": "Poland", "cases": 119,"death":3,"recovered":0 },
+		{    "name": "Portugal", "cases": 245,"death":0,"recovered":2 },
+		{    "name": "Spain", "cases": 7798,"death":289,"recovered":517 },
+		{    "name": "Sweden", "cases": 1022,"death":3,"recovered":1 },
+		{    "name": "Switzerland", "cases": 2200,"death":14,"recovered":4 },
+		{    "name": "Turkey", "cases": 6,"death":0,"recovered":0 },
+		{    "name": "Ukraine", "cases": 3,"death":1,"recovered":0 },
+		{    "name": "United Kingdom", "cases": 1145,"death":21,"recovered":19 }]
+	   },	
+	   {	
+            "name": "North America",		
+            "children": [		
+		{    "name": "Barbados", "cases": 0,"death":0,"recovered":0 },
+		{    "name": "Canada", "cases": 252,"death":1,"recovered":8 },
+		{    "name": "Costa Rica", "cases": 27,"death":0,"recovered":0 },
+		{    "name": "Cuba", "cases": 4,"death":0,"recovered":0 },
+		{    "name": "Dominican Republic", "cases": 11,"death":0,"recovered":0 },
+		{    "name": "Mexico", "cases": 41,"death":0,"recovered":4 },
+		{    "name": "Panama", "cases": 43,"death":1,"recovered":0 },
+		{    "name": "US", "cases": 3499,"death":21,"recovered":12 }]
+	   }, 	
+	   {	
+            "name": "South America",		
+            "children": [		
+		{   "name": "Argentina", "cases": 45,"death":2,"recovered":1 },
+		{   "name": "Bolivia", "cases": 10,"death":0,"recovered":0 },
+		{   "name": "Brazil", "cases": 162,"death":0,"recovered":0 },
+		{   "name": "Chile", "cases": 74,"death":0,"recovered":0 },
+		{   "name": "Diamond Princess", "cases": 706,"death":138,"recovered": 199 },
+		{   "name": "Colombia", "cases": 34,"death":0,"recovered":0 },
+		{   "name": "Ecuador", "cases": 28,"death":2,"recovered":0 },
+		{   "name": "Peru", "cases": 43,"death":0,"recovered":0 },
+		{   "name": "Uruguay", "cases": 4,"death":0,"recovered":0 },
+		{   "name": "Venezuela", "cases": 10,"death":0,"recovered":0 }]
+	  },	
+	  {	
+            "name": "Oceania",		
+            "children": [		
+		{ "name": "Australia", "cases": 297,"death":3,"recovered":23 },
+		{ "name": "New Zealand", "cases": 8,"death":0,"recovered":0 }]
+	  }   	
+ ]		
+		
+},
+{		
+    "name": "Covid cases",		
+    "children": [{		
+            "name": "Asia",		
+            "children": [		
+		{ "name": "Afghanistan", "cases": 40,"death":1,"recovered":1 },
+		{ "name": "Bangladesh", "cases": 27,"death":2,"recovered":3 },
+		{ "name": "China", "cases": 81435,"death":3274,"recovered":72362 },
+		{ "name": "India", "cases": 396,"death":7,"recovered":27 },
+		{ "name": "Indonesia", "cases": 514,"death":48,"recovered":29 },
+		{ "name": "Iran", "cases": 21638,"death":1685,"recovered":7931 },
+		{ "name": "Iraq", "cases": 233,"death":20,"recovered":57 },
+		{ "name": "Israel", "cases": 883,"death":1,"recovered":37 },
+		{ "name": "Japan", "cases": 1101,"death":41,"recovered":235 },
+		{ "name": "Kazakhstan", "cases": 60,"death":0,"recovered":0 },
+		{ "name": "South Korea", "cases": 8961,"death":111,"recovered":2909 },
+		{ "name": "Kuwait", "cases": 188,"death":0,"recovered":27 },
+		{ "name": "Malaysia", "cases": 1306,"death":10,"recovered":139 },
+		{ "name": "Pakistan", "cases": 776,"death":5,"recovered":5 },
+		{ "name": "Philippines", "cases": 380,"death":25,"recovered":17 },
+		{ "name": "Qatar", "cases": 494,"death":0,"recovered":33 },
+		{ "name": "Russia", "cases": 367,"death":1,"recovered":16 },
+		{ "name": "Saudi Arabia", "cases": 511,"death":0,"recovered":16 },
+		{ "name": "Singapore", "cases": 455,"death":2,"recovered":144 },
+		{ "name": "Sri Lanka", "cases": 82,"death":0,"recovered":3 },
+		{ "name": "Thailand", "cases": 599,"death":1,"recovered":44 },
+		{ "name": "United Arab Emirates", "cases": 153,"death":3,"recovered":38 },
+		{ "name": "Uzbekistan", "cases": 43,"death":0,"recovered":0 }]
+	     },	
+	     {	
+            "name": "Africa",		
+            "children": [		
+		{ "name": "Algeria", "cases": 201,"death":17,"recovered":65 },
+		{ "name": "Benin", "cases": 2,"death":0,"recovered":0 },
+		{   "name": "Zambia", "cases": 38,"death":3,"recovered":0 },
+		{   "name": "Zimbabwe", "cases": 27,"death":5,"recovered":0 },
+		{   "name": "Namibia", "cases": 39,"death":9,"recovered":0 },
+		{ "name": "Cameroon", "cases": 40,"death":0,"recovered":0 },
+		{ "name": "CAR", "cases": 3,"death":0,"recovered":0 },
+		{ "name": "Congo ", "cases": 33,"death":1,"recovered":0},
+		{ "name": "Egypt", "cases": 327,"death":14,"recovered":56 },
+		{ "name": "Ghana", "cases": 23,"death":1,"recovered":0 },
+		{ "name": "Morocco", "cases": 115,"death":4,"recovered": 3},
+		{ "name": "South Africa", "cases": 274,"death":0,"recovered":0 },
+		{ "name": "Tunisia", "cases": 75,"death":3,"recovered":1 }]
+	     },	
+	     {	
+            "name": "Europe",		
+            "children": [		
+		{ "name": "Austria", "cases": 3582,"death":16,"recovered":9 },
+		{ "name": "Belgium", "cases": 3401,"death":75,"recovered":263 },
+		{ "name": "Croatia", "cases": 254,"death":1,"recovered":5 },
+		{ "name": "Denmark", "cases": 1514,"death":13,"recovered":1 },
+		{ "name": "Finland", "cases": 626,"death":1,"recovered":10 },
+		{ "name": "France", "cases": 16243,"death":676,"recovered":1206 },
+		{ "name": "Germany", "cases": 24873,"death":94,"recovered":266 },
+		{ "name": "Iceland", "cases": 568,"death":1,"recovered":36 },
+		{ "name": "Ireland", "cases": 906,"death":4,"recovered":5 },
+		{ "name": "Italy", "cases": 59138,"death":5476,"recovered":7024 },
+		{ "name": "Moldova", "cases": 94,"death":1,"recovered":1 },
+		{ "name": "Netherlands", "cases": 4217,"death":180,"recovered":2 },
+		{ "name": "Norway", "cases": 2385,"death":7,"recovered":1 },
+		{ "name": "Poland", "cases": 634,"death":7,"recovered":1 },
+		{ "name": "Portugal", "cases": 1600,"death":14,"recovered":5 },
+		{ "name": "Spain", "cases": 28768,"death":1772,"recovered":2575 },
+		{ "name": "Sweden", "cases": 1934,"death":21,"recovered":16 },
+		{ "name": "Switzerland", "cases": 7474,"death":98,"recovered":131 },
+		{ "name": "Turkey", "cases": 1236,"death":30,"recovered":0 },
+		{ "name": "Ukraine", "cases": 73,"death":3,"recovered":1 },
+		{ "name": "United Kingdom", "cases": 5745,"death":282,"recovered":67 }]
+	   },	
+	   {	
+            "name": "North America",		
+            "children": [		
+		{ "name": "Barbados", "cases": 14,"death":0,"recovered":0 },
+		{ "name": "Canada", "cases": 1469,"death":21,"recovered":10 },
+		{ "name": "Costa Rica", "cases": 134,"death":2,"recovered":2 },
+		{ "name": "Cuba", "cases": 35,"death":1,"recovered":0 },
+		{ "name": "Dominican Republic", "cases": 202,"death":3,"recovered":0 },
+		{ "name": "Mexico", "cases": 251,"death":2,"recovered":4 },
+		{ "name": "Panama", "cases": 313,"death":3,"recovered":0 },
+		{ "name": "US", "cases": 33276,"death":417,"recovered":178 }]
+	   }, 	
+	   {	
+            "name": "South America",		
+            "children": [		
+		{ "name": "Argentina", "cases": 266,"death":4,"recovered":3 },
+		{ "name": "Bolivia", "cases": 24,"death":0,"recovered":0 },
+		{ "name": "Brazil", "cases": 1546,"death":25,"recovered":2 },
+		{ "name": "Chile", "cases": 632,"death":1,"recovered":8 },
+		{ "name": "Diamond Princess", "cases": 712,"death":162,"recovered":212 },
+		{ "name": "Colombia", "cases": 231,"death":2,"recovered":3 },
+		{ "name": "Ecuador", "cases": 789,"death":14,"recovered":3 },
+		{ "name": "Peru", "cases": 363,"death":5,"recovered":1},
+		{ "name": "Uruguay", "cases": 158,"death":0,"recovered":0 },
+		{ "name": "Venezuela", "cases": 70,"death":0,"recovered":15 }]
+	  },	
+	  {	
+            "name": "Oceania",		
+            "children": [		
+		{ "name": "Australia", "cases": 1549,"death":7,"recovered":88},
+		{ "name": "New Zealand", "cases": 102,"death":0,"recovered":0 }]
+	  }   	
+ ]		
+		
+},		
+{		
+    "name": "Covid cases",		
+    "children": [{		
+            "name": "Asia",		
+            "children": [		
+		{ "name": "Afghanistan", "cases": 120,"death":4,"recovered":2 },
+		{ "name": "Bangladesh", "cases": 48,"death":5,"recovered":15 },
+		{ "name": "China", "cases": 82122,"death":3304,"recovered":75582 },
+		{ "name": "India", "cases": 1024,"death":27,"recovered":95 },
+		{ "name": "Indonesia", "cases": 1285,"death":114,"recovered":64 },
+		{ "name": "Iran", "cases": 38309,"death":2640,"recovered":12391 },
+		{ "name": "Iraq", "cases": 547,"death":42,"recovered":143 },
+		{ "name": "Israel", "cases": 4247,"death":15,"recovered":132 },
+		{ "name": "Japan", "cases": 1866,"death":54,"recovered":424 },
+		{ "name": "Kazakhstan", "cases": 284,"death":1,"recovered":20 },
+		{ "name": "South Korea", "cases": 9583,"death":152,"recovered":5033 },
+		{ "name": "Kuwait", "cases": 255,"death":0,"recovered":67 },
+		{ "name": "Malaysia", "cases": 2470,"death":35,"recovered":388 },
+		{ "name": "Pakistan", "cases": 1597,"death":14,"recovered":29 },
+		{ "name": "Philippines", "cases": 1418,"death":71,"recovered":42 },
+		{ "name": "Qatar", "cases": 634,"death":1,"recovered":48 },
+		{ "name": "Russia", "cases": 1534,"death":8,"recovered":64 },
+		{ "name": "Saudi Arabia", "cases": 1299,"death":8,"recovered":66 },
+		{ "name": "Singapore", "cases": 844,"death":3,"recovered":212 },
+		{ "name": "Sri Lanka", "cases": 117,"death":1,"recovered":11 },
+		{ "name": "Thailand", "cases": 1388,"death":7,"recovered":97 },
+		{ "name": "United Arab Emirates", "cases": 570,"death":3,"recovered":58 },
+		{ "name": "Uzbekistan", "cases": 144,"death":2,"recovered":7 }]
+	     },	
+	     {	
+            "name": "Africa",		
+            "children": [		
+		{ "name": "Algeria", "cases": 511,"death":31,"recovered":31},
+		{ "name": "Benin", "cases": 6,"death":0,"recovered":0 },
+		{   "name": "Zambia", "cases": 59,"death":12,"recovered":0 },
+		{   "name": "Zimbabwe", "cases": 48,"death":14,"recovered":0 },
+		{   "name": "Namibia", "cases": 63,"death":17,"recovered":2 },
+		{ "name": "Cameroon", "cases": 139,"death":6,"recovered":5 },
+		{ "name": "CAR", "cases": 3,"death":0,"recovered":0 },
+		{ "name": "Congo ", "cases": 84,"death":6,"recovered":2 },
+		{ "name": "Egypt", "cases": 609,"death":40,"recovered":132 },
+		{ "name": "Ghana", "cases": 152,"death":5,"recovered":2 },
+		{ "name": "Morocco", "cases": 479,"death":26,"recovered":13 },
+		{ "name": "South Africa", "cases": 1280,"death":2,"recovered":31 },
+		{ "name": "Tunisia", "cases": 312,"death":8,"recovered":2 }]
+	     },	
+	     {	
+            "name": "Europe",		
+            "children": [		
+		{ "name": "Austria", "cases": 8788,"death":86,"recovered":479 },
+		{ "name": "Belgium", "cases": 10836,"death":431,"recovered":1359 },
+		{ "name": "Croatia", "cases": 713,"death":6,"recovered":52},
+		{ "name": "Denmark", "cases": 2564,"death":72,"recovered":73 },
+		{ "name": "Finland", "cases": 1240,"death":11,"recovered":10 },
+		{ "name": "France", "cases": 40708,"death":2611,"recovered":7226 },
+		{ "name": "Germany", "cases": 62095,"death":533,"recovered":9211 },
+		{ "name": "Iceland", "cases": 1020,"death":2,"recovered":135 },
+		{ "name": "Ireland", "cases": 2615,"death":46,"recovered":5 },
+		{ "name": "Italy", "cases": 97689,"death":10779,"recovered":13030 },
+		{ "name": "Moldova", "cases": 263,"death":2,"recovered":2 },
+		{ "name": "Netherlands", "cases": 10930,"death":772,"recovered":253 },
+		{ "name": "Norway", "cases": 4284,"death":25,"recovered":7 },
+		{ "name": "Poland", "cases": 1862,"death":22,"recovered":7 },
+		{ "name": "Portugal", "cases": 5962,"death":119,"recovered":43 },
+		{ "name": "Spain", "cases": 80110,"death":6803,"recovered":14709 },
+		{ "name": "Sweden", "cases": 3700,"death":110,"recovered":16 },
+		{ "name": "Switzerland", "cases": 14829,"death":300,"recovered":1595 },
+		{ "name": "Turkey", "cases": 9217,"death":131,"recovered":105 },
+		{ "name": "Ukraine", "cases": 475,"death":10,"recovered":6 },
+		{ "name": "United Kingdom", "cases": 19780,"death":1231,"recovered":151 }]
+	    },	
+	   {	
+            "name": "North America",		
+            "children": [		
+		{ "name": "Barbados", "cases": 33,"death":0,"recovered":0 },
+		{ "name": "Canada", "cases": 6280,"death":64,"recovered":466 },
+		{ "name": "Costa Rica", "cases": 314,"death":2,"recovered":3 },
+		{ "name": "Cuba", "cases": 139,"death":3,"recovered":4 },
+		{ "name": "Dominican Republic", "cases": 859,"death":39,"recovered":3 },
+		{ "name": "Mexico", "cases": 848,"death":16,"recovered":4 },
+		{ "name": "Panama", "cases": 901,"death":17,"recovered":4 },
+		{ "name": "US", "cases": 140909,"death":2467,"recovered":2665 }]
+	   }, 	
+	   {	
+            "name": "South America",		
+            "children": [		
+		{ "name": "Argentina", "cases": 745,"death":19,"recovered":72 },
+		{ "name": "Bolivia", "cases": 81,"death":1,"recovered":0 },
+		{ "name": "Brazil", "cases": 4256,"death":136,"recovered":6 },
+		{ "name": "Chile", "cases": 2139,"death":7,"recovered":75 },
+		{ "name": "Diamond Princess", "cases": 712,"death":162,"recovered":423 },
+		{ "name": "Colombia", "cases": 702,"death":10,"recovered":10 },
+		{ "name": "Ecuador", "cases": 1924,"death":58,"recovered":3 },
+		{ "name": "Peru", "cases": 852,"death":18,"recovered":16 },
+		{ "name": "Uruguay", "cases": 304,"death":1,"recovered":0 },
+		{ "name": "Venezuela", "cases": 119,"death":2,"recovered":39 }]
+	  },	
+	  {	
+            "name": "Oceania",		
+            "children": [		
+		{ "name": "Australia", "cases": 3984,"death":16,"recovered":244 },
+		{ "name": "New Zealand", "cases": 514,"death":1,"recovered":56 }]
+	  }   	
+ ]		
+		
+},
+{		
+    "name": "Covid cases",		
+    "children": [{		
+            "name": "Asia",		
+            "children": [		
+		{   "name": "Afghanistan", "cases": 349,"death":7,"recovered":15 },
+		{   "name": "Bangladesh", "cases": 88,"death":9,"recovered":33 },
+		{   "name": "China", "cases": 82602,"death":3333,"recovered":77207 },
+		{   "name": "India", "cases": 3588,"death":99,"recovered":229 },
+		{   "name": "Indonesia", "cases": 2273,"death":198,"recovered":164 },
+		{   "name": "Iran", "cases": 58226,"death":3603,"recovered":19736 },
+		{   "name": "Iraq", "cases": 961,"death":61,"recovered":279 },
+		{   "name": "Israel", "cases": 8430,"death":49,"recovered":477 },
+		{   "name": "Japan", "cases": 3139,"death":77,"recovered":514 },
+		{   "name": "Kazakhstan", "cases": 584,"death":6,"recovered":42 },
+		{   "name": "South Korea", "cases": 10237,"death":183,"recovered":6463 },
+		{   "name": "Kuwait", "cases": 556,"death":1,"recovered":99 },
+		{   "name": "Malaysia", "cases": 3662,"death":61,"recovered":1005 },
+		{   "name": "Pakistan", "cases": 3157,"death":47,"recovered":211 },
+		{   "name": "Philippines", "cases": 3246,"death":152,"recovered":64 },
+		{   "name": "Qatar", "cases": 1604,"death":4,"recovered":123 },
+		{   "name": "Russia", "cases": 5389,"death":45,"recovered":355 },
+		{   "name": "Saudi Arabia", "cases": 2402,"death":34,"recovered":488 },
+		{   "name": "Singapore", "cases": 1309,"death":6,"recovered":320 },
+		{   "name": "Sri Lanka", "cases": 176,"death":5,"recovered":33 },
+		{   "name": "Thailand", "cases": 2169,"death":23,"recovered":793 },
+		{   "name": "United Arab Emirates", "cases": 1799,"death":10,"recovered":144 },
+		{   "name": "Uzbekistan", "cases": 342,"death":2,"recovered":30 }]
+	     },	
+	     {	
+            "name": "Africa",		
+            "children": [		
+		{   "name": "Algeria", "cases": 1320,"death":152,"recovered":90 },
+		{   "name": "Benin", "cases": 22,"death":0,"recovered":5},
+		{   "name": "Zambia", "cases": 219,"death":32,"recovered":3 },
+		{   "name": "Zimbabwe", "cases": 187,"death":23,"recovered":0 },
+		{   "name": "Namibia", "cases": 342,"death":31,"recovered":3 },
+		{   "name": "Cameroon", "cases": 650,"death":9,"recovered":17 },
+		{   "name": "CAR", "cases": 8,"death":0,"recovered":0 },
+		{   "name": "Congo ", "cases": 1485,"death":23,"recovered":5 },
+		{   "name": "Egypt", "cases": 1173,"death":78,"recovered":247 },
+		{   "name": "Ghana", "cases": 214,"death":5,"recovered":31 },
+		{   "name": "Morocco", "cases": 1021,"death":70,"recovered":76 },
+		{   "name": "South Africa", "cases": 1655,"death":11,"recovered":95 },
+		{   "name": "Tunisia", "cases": 574,"death":22,"recovered":5 }]
+	     },	
+	     {	
+            "name": "Europe",		
+            "children": [		
+		{    "name": "Austria", "cases": 12051,"death":204,"recovered":2998 },
+		{    "name": "Belgium", "cases": 19691,"death":1447,"recovered":3751 },
+		{    "name": "Croatia", "cases": 1182,"death":15,"recovered":125 },
+		{    "name": "Denmark", "cases": 4561,"death":179,"recovered":1429 },
+		{    "name": "Finland", "cases": 1927,"death":28,"recovered":300 },
+		{    "name": "France", "cases": 93773,"death":8093,"recovered":16349 },
+		{    "name": "Germany", "cases": 100123,"death":1584,"recovered":28700 },
+		{    "name": "Iceland", "cases": 1486,"death":4,"recovered":428 },
+		{    "name": "Ireland", "cases": 4994,"death":158,"recovered":25 },
+		{    "name": "Italy", "cases": 128948,"death":15887,"recovered":21815 },
+		{    "name": "Moldova", "cases": 864,"death":15,"recovered":30 },
+		{    "name": "Netherlands", "cases": 17953,"death":1771,"recovered":257 },
+		{    "name": "Norway", "cases": 5687,"death":71,"recovered":32 },
+		{    "name": "Poland", "cases": 4102,"death":94,"recovered":134 },
+		{    "name": "Portugal", "cases": 11278,"death":295,"recovered":75 },
+		{    "name": "Spain", "cases": 131646,"death":12641,"recovered":38080 },
+		{    "name": "Sweden", "cases": 6830,"death":401,"recovered":205 },
+		{    "name": "Switzerland", "cases": 21100,"death":715,"recovered":6415 },
+		{    "name": "Turkey", "cases": 27069,"death":574,"recovered":1042 },
+		{    "name": "Ukraine", "cases": 1308,"death":37,"recovered":28},
+		{    "name": "United Kingdom", "cases": 48436,"death":4943,"recovered":229 }]
+	   },	
+	   {	
+            "name": "North America",		
+            "children": [		
+		{    "name": "Barbados", "cases": 56,"death":1,"recovered":6},
+		{    "name": "Canada", "cases": 15756,"death":259,"recovered":3012 },
+		{    "name": "Costa Rica", "cases": 454,"death":2,"recovered":16 },
+		{    "name": "Cuba", "cases": 320,"death":8,"recovered":15 },
+		{    "name": "Dominican Republic", "cases": 1745,"death":82,"recovered":17 },
+		{    "name": "Mexico", "cases": 1890,"death":79,"recovered":633 },
+		{    "name": "Panama", "cases": 1801,"death":46,"recovered":13 },
+		{    "name": "US", "cases": 337072,"death":9619,"recovered":17448 }]
+	   }, 	
+	   {	
+            "name": "South America",		
+            "children": [		
+		{   "name": "Argentina", "cases": 1451,"death":44,"recovered":280 },
+		{   "name": "Bolivia", "cases": 157,"death":10,"recovered":2 },
+		{   "name": "Brazil", "cases": 11130,"death":486,"recovered":127 },
+		{   "name": "Chile", "cases": 4471,"death":34,"recovered":18 },
+		{   "name": "Diamond Princess", "cases": 712,"death":162,"recovered":490 },
+		{   "name": "Colombia", "cases": 199,"death":35,"recovered":88 },
+		{   "name": "Ecuador", "cases": 3646,"death":180,"recovered":100 },
+		{   "name": "Peru", "cases": 2281,"death":83,"recovered":989 },
+		{   "name": "Uruguay", "cases": 400,"death":5,"recovered":93 },
+		{   "name": "Venezuela", "cases": 159,"death":7,"recovered":52 }]
+	  },	
+	  {	
+            "name": "Oceania",		
+            "children": [		
+		{ "name": "Australia", "cases": 5687,"death":35,"recovered":757 },
+		{ "name": "New Zealand", "cases": 1039,"death":1,"recovered":156 }]
+	  }   	
+ ]		
+		
+},
+{		
+    "name": "Covid cases",		
+    "children": [{		
+            "name": "Asia",		
+            "children": [		
+		{   "name": "Afghanistan", "cases": 607,"death":18,"recovered":32 },
+		{   "name": "Bangladesh", "cases": 621,"death":34,"recovered":39 },
+		{   "name": "China", "cases": 83134,"death":3433,"recovered":77956 },
+		{   "name": "India", "cases": 9205,"death":331,"recovered":1080 },
+		{   "name": "Indonesia", "cases": 4241,"death":373,"recovered":359 },
+		{   "name": "Iran", "cases": 71686,"death":4474,"recovered":43894 },
+		{   "name": "Iraq", "cases": 1352,"death":76,"recovered":640 },
+		{   "name": "Israel", "cases": 11145,"death":103,"recovered":1627 },
+		{   "name": "Japan", "cases": 6748,"death":108,"recovered":762 },
+		{   "name": "Kazakhstan", "cases": 951,"death":10,"recovered":99 },
+		{   "name": "South Korea", "cases": 10512,"death":214,"recovered":7368 },
+		{   "name": "Kuwait", "cases": 1234,"death":1,"recovered":142},
+		{   "name": "Malaysia", "cases": 4683,"death":76,"recovered":2108},
+		{   "name": "Pakistan", "cases": 5230,"death":91,"recovered":1028},
+		{   "name": "Philippines", "cases": 4648,"death":297,"recovered":197 },
+		{   "name": "Qatar", "cases": 2979,"death":7,"recovered":275 },
+		{   "name": "Russia", "cases": 15770,"death":130 ,"recovered":1291},
+		{   "name": "Saudi Arabia", "cases": 4462,"death":59,"recovered":761 },
+		{   "name": "Singapore", "cases": 2532,"death":8,"recovered":560 },
+		{   "name": "Sri Lanka", "cases": 210,"death":7,"recovered":56},
+		{   "name": "Thailand", "cases": 2551,"death":38,"recovered":1218 },
+		{   "name": "United Arab Emirates", "cases": 4123,"death":22,"recovered":680 },
+		{   "name": "Uzbekistan", "cases": 865,"death":4,"recovered":66}]
+	     },	
+	     {	
+            "name": "Africa",		
+            "children": [		
+		{   "name": "Algeria", "cases": 1914,"death":293,"recovered":591},
+		{   "name": "Benin", "cases": 35,"death":1,"recovered":5 },
+		{   "name": "Zambia", "cases": 768,"death":42,"recovered":30 },
+		{   "name": "Zimbabwe", "cases": 531,"death":38,"recovered":0 },
+		{   "name": "Namibia", "cases": 864,"death":42,"recovered":3 },
+		{   "name": "Cameroon", "cases": 820,"death":12,"recovered":98},
+		{   "name": "CAR", "cases": 8,"death":0,"recovered":0},
+		{   "name": "Congo ", "cases": 2776,"death":25,"recovered":21 },
+		{   "name": "Egypt", "cases": 2065,"death":159,"recovered":589 },
+		{   "name": "Ghana", "cases": 566,"death":8,"recovered":4 },
+		{   "name": "Morocco", "cases": 1661,"death":118,"recovered": 177},
+		{   "name": "South Africa", "cases": 2173,"death":25,"recovered":410 },
+		{   "name": "Tunisia", "cases": 707,"death":31,"recovered":43 }]
+	     },	
+	     {	
+            "name": "Europe",		
+            "children": [		
+		{    "name": "Austria", "cases": 13945,"death":350,"recovered":6987},
+		{    "name": "Belgium", "cases": 29647,"death":3600,"recovered":6463 },
+		{    "name": "Croatia", "cases": 1600,"death":23,"recovered":373 },
+		{    "name": "Denmark", "cases": 6369,"death":273,"recovered":2291 },
+		{    "name": "Finland", "cases": 2974,"death":56,"recovered":300},
+		{    "name": "France", "cases": 133670,"death":14412,"recovered":27469 },
+		{    "name": "Germany", "cases": 127854,"death":3022,"recovered":60300 },
+		{    "name": "Iceland", "cases": 1701,"death":8,"recovered":889},
+		{    "name": "Ireland", "cases": 9655,"death":334,"recovered":25 },
+		{    "name": "Italy", "cases": 156363,"death":19899,"recovered":34211 },
+		{    "name": "Moldova", "cases": 1662,"death":31,"recovered":94},
+		{    "name": "Netherlands", "cases": 25746,"death":2747,"recovered":295 },
+		{    "name": "Norway", "cases": 6525,"death":128,"recovered": 32},
+		{    "name": "Poland", "cases": 6674,"death":232,"recovered": 439},
+		{    "name": "Portugal", "cases": 16585,"death":504,"recovered":277 },
+		{    "name": "Spain", "cases": 166831,"death":17209,"recovered":62391 },
+		{    "name": "Sweden", "cases": 10483,"death":899,"recovered":381},
+		{    "name": "Switzerland", "cases": 25415,"death":1106,"recovered":12700 },
+		{    "name": "Turkey", "cases": 56956,"death":1198,"recovered":3446},
+		{    "name": "Ukraine", "cases": 2777,"death":83,"recovered":89},
+		{    "name": "United Kingdom", "cases": 85206,"death":10629,"recovered":626}]
+	   },	
+	   {	
+            "name": "North America",		
+            "children": [		
+		{    "name": "Barbados", "cases": 71,"death":4,"recovered":11 },
+		{    "name": "Canada", "cases": 24298,"death":714,"recovered":7123},
+		{    "name": "Costa Rica", "cases": 595,"death":3,"recovered":56},
+		{    "name": "Cuba", "cases": 669,"death":18,"recovered":92},
+		{    "name": "Dominican Republic", "cases": 2967,"death":173,"recovered":131 },
+		{    "name": "Mexico", "cases": 4219,"death":273,"recovered":1772},
+		{    "name": "Panama", "cases": 3234,"death":79,"recovered":23},
+		{    "name": "US", "cases": 555313,"death":22020,"recovered":32988 }]
+	   }, 	
+	   {	
+            "name": "South America",		
+            "children": [		
+		{   "name": "Argentina", "cases": 2142,"death":90 ,"recovered":468},
+		{   "name": "Bolivia", "cases": 300,"death":24,"recovered":2 },
+		{   "name": "Brazil", "cases": 22192,"death":1223,"recovered":173},
+		{   "name": "Chile", "cases": 7213,"death":80,"recovered":2059 },
+		{   "name": "Diamond Princess", "cases": 712,"death":162,"recovered": 550 },
+		{   "name": "Colombia", "cases": 294,"death":109,"recovered":270 },
+		{   "name": "Ecuador", "cases": 7466,"death":333,"recovered": 501},
+		{   "name": "Peru", "cases": 7519,"death":193,"recovered":1798 },
+		{   "name": "Uruguay", "cases": 480,"death":7,"recovered":231},
+		{   "name": "Venezuela", "cases":181,"death":9,"recovered":93 }]
+	  },	
+	  {	
+            "name": "Oceania",		
+            "children": [		
+		{ "name": "Australia", "cases": 6315,"death":60,"recovered":1806 },
+		{ "name": "New Zealand", "cases": 1330,"death":4,"recovered":471 }]
+	  }   	
+ ]		
+		
+}
+]		

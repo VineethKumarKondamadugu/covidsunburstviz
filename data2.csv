@@ -1,0 +1,217 @@
+﻿continent,country,week,cases,deaths,recovered
+Asia,China,1,80823,3100,57388
+Asia,China,2,81003,3203,67017
+Asia,China,3,81435,3274,72362
+Asia,China,4,82122,3304,75582
+Asia,China,5,82602,3333,77207
+Asia,China,6,83134,3433,77956
+Asia,Iran,1,6566,194,2134
+Asia,Iran,2,13938,724,4590
+Asia,Iran,3,21638,1685,7931
+Asia,Iran,4,38309,2640,12391
+Asia,Iran,5,58226,3603,19736
+Asia,Iran,6,71686,4474,43894
+Asia,India,1,39,0,3
+Asia,India,2,113,2,13
+Asia,India,3,396,7,27
+Asia,India,4,1024,27,95
+Asia,India,5,3588,99,229
+Asia,India,6,9205,331,1080
+Asia,South Korea,1,7314,50,118
+Asia,South Korea,2,8162,75,510
+Asia,South Korea,3,8961,111,2909
+Asia,South Korea,4,9943,152,5033
+Asia,South Korea,5,10237,183,6463
+Asia,South Korea,6,10512,214,7368
+Asia,Russia,1,17,0,3
+Asia,Russia,2,63,0,8
+Asia,Russia,3,367,1,16
+Asia,Russia,4,1534,8,64
+Asia,Russia,5,5389,45,355
+Asia,Russia,6,15770,130,1291
+Asia,Isreal,1,61,0,2
+Asia,Isreal,2,213,0,4
+Asia,Isreal,3,883,1,37
+Asia,Isreal,4,4247,15,132
+Asia,Isreal,5,8430,49,477
+Asia,Isreal,6,11145,103,1627
+Asia,Japan,1,502,6,76
+Asia,Japan,2,839,22,118
+Asia,Japan,3,1101,41,235
+Asia,Japan,4,1866,54,424
+Asia,Japan,5,3139,77,514
+Asia,Japan,6,6748,108,762
+Asia,Pakisthan,1,6,0,1
+Asia,Pakisthan,2,53,0,2
+Asia,Pakisthan,3,776,5,5
+Asia,Pakisthan,4,1597,14,29
+Asia,Pakisthan,5,3157,47,211
+Asia,Pakisthan,6,5230,91,1028
+Asia,Malaysia,1,99,0,24
+Asia,Malaysia,2,428,0,42
+Asia,Malaysia,3,1306,10,139
+Asia,Malaysia,4,2470,35,388
+Asia,Malaysia,5,3662,61,1005
+Asia,Malaysia,6,4683,76,2108
+Asia,Philippines,1,10,1,1
+Asia,Philippines,2,140,11,2
+Asia,Philippines,3,380,25,17
+Asia,Philippines,4,1418,71,42
+Asia,Philippines,5,3246,152,64
+Asia,Philippines,6,4648,297,197
+North America,US,1,518,0,7
+North America,US,2,3499,21,12
+North America,US,3,33276,417,178
+North America,US,4,140909,2467,2665
+North America,US,5,337072,9619,17448
+North America,US,6,555313,22020,32988
+North America,Canada,1,64,0,8
+North America,Canada,2,252,1,8
+North America,Canada,3,1469,21,10
+North America,Canada,4,6280,64,466
+North America,Canada,5,15756,259,3012
+North America,Canada,6,24298,714,7123
+North America,Mexico,1,7,0,1
+North America,Mexico,2,41,0,4
+North America,Mexico,3,251,2,4
+North America,Mexico,4,848,16,4
+North America,Mexico,5,1890,79,633
+North America,Mexico,6,4219,273,1772
+North America,Panama,1,0,0,0
+North America,Panama,2,43,1,0
+North America,Panama,3,313,3,0
+North America,Panama,4,901,17,4
+North America,Panama,5,1801,46,13
+North America,Panama,6,3234,79,23
+Europe,Italy,1,7375,366,622
+Europe,Italy,2,24747,1809,2335
+Europe,Italy,3,59138,5476,7024
+Europe,Italy,4,97689,10779,13030
+Europe,Italy,5,128948,15887,21815
+Europe,Italy,6,156363,19899,34211
+Europe,Germany,1,1040,0,18
+Europe,Germany,2,5795,11,46
+Europe,Germany,3,24873,94,266
+Europe,Germany,4,62095,533,9211
+Europe,Germany,5,100123,1584,28700
+Europe,Germany,6,127854,3022,60300
+Europe,Spain,1,673,17,30
+Europe,Spain,2,7798,289,517
+Europe,Spain,3,28768,1772,2575
+Europe,Spain,4,80110,6803,14709
+Europe,Spain,5,131646,12641,38080
+Europe,Spain,6,166831,17209,62391
+Europe,UK,1,274,3,18
+Europe,UK,2,1145,21,19
+Europe,UK,3,5745,282,67
+Europe,UK,4,19780,1231,151
+Europe,UK,5,48436,4943,229
+Europe,UK,6,85206,10629,626
+Europe,France,1,1136,19,12
+Europe,France,2,4532,91,12
+Europe,France,3,14243,676,1206
+Europe,France,4,40708,2611,7226
+Europe,France,5,93773,8093,16349
+Europe,France,6,133670,14412,27469
+Europe,Portugal,1,30,0,0
+Europe,Portugal,2,245,0,2
+Europe,Portugal,3,1600,14,5
+Europe,Portugal,4,5962,119,43
+Europe,Portugal,5,11278,295,75
+Europe,Portugal,6,16585,504,277
+Europe,Belgium,1,200,0,1
+Europe,Belgium,2,886,4,1
+Europe,Belgium,3,3401,75,263
+Europe,Belgium,4,10836,431,1359
+Europe,Belgium,5,19691,1447,3751
+Europe,Belgium,6,29647,3600,6463
+Europe,Turkey,1,0,0,0
+Europe,Turkey,2,6,0,0
+Europe,Turkey,3,1236,30,0
+Europe,Turkey,4,9217,131,105
+Europe,Turkey,5,27069,574,1042
+Europe,Turkey,6,56956,1198,3446
+Europe,Switzerland,1,337,2,3
+Europe,Switzerland,2,2200,14,4
+Europe,Switzerland,3,7474,98,131
+Europe,Switzerland,4,14829,300,1595
+Europe,Switzerland,5,21100,715,6415
+Europe,Switzerland,6,25415,1106,12700
+Europe,Austria,1,104,0,0
+Europe,Austria,2,860,1,6
+Europe,Austria,3,3582,16,9
+Europe,Austria,4,8788,86,479
+Europe,Austria,5,12051,204,2998
+Europe,Austria,6,13945,350,6987
+South America,Brazil,1,90,0,0
+South America,Brazil,2,162,0,0
+South America,Brazil,3,1546,25,2
+South America,Brazil,4,4256,136,6
+South America,Brazil,5,11130,486,127
+South America,Brazil,6,22192,1223,173
+South America,Chile,1,8,0,0
+South America,Chile,2,74,0,0
+South America,Chile,3,632,1,8
+South America,Chile,4,2139,7,75
+South America,Chile,5,4471,34,956
+South America,Chile,6,7213,80,2059
+South America,Ecuador,1,14,0,0
+South America,Ecuador,2,28,2,0
+South America,Ecuador,3,789,14,3
+South America,Ecuador,4,1924,58,3
+South America,Ecuador,5,3646,180,100
+South America,Ecuador,6,7466,333,501
+South America,Peru,1,6,0,0
+South America,Peru,2,43,0,0
+South America,Peru,3,363,5,1
+South America,Peru,4,852,18,16
+South America,Peru,5,2281,83,989
+South America,Peru,6,7519,193,1798
+South America,Argentina,1,12,1,0
+South America,Argentina,2,45,2,1
+South America,Argentina,3,266,4,3
+South America,Argentina,4,745,19,72
+South America,Argentina,5,1451,44,280
+South America,Argentina,6,2142,90,468
+Africa,Egypt,1,49,1,1
+Africa,Egypt,2,110,2,21
+Africa,Egypt,3,327,14,56
+Africa,Egypt,4,609,40,132
+Africa,Egypt,5,1173,78,247
+Africa,Egypt,6,2065,159,589
+Africa,South Africa,1,3,0,0
+Africa,South Africa,2,51,0,0
+Africa,South Africa,3,274,0,0
+Africa,South Africa,4,1280,2,31
+Africa,South Africa,5,1655,11,95
+Africa,South Africa,6,2173,25,410
+Africa,Congo,1,0,0,0
+Africa,Congo,2,3,0,0
+Africa,Congo,3,33,1,0
+Africa,Congo,4,84,6,2
+Africa,Congo,5,1485,23,5
+Africa,Congo,6,2776,25,21
+Africa,Morocco,1,2,0,0
+Africa,Morocco,2,28,1,1
+Africa,Morocco,3,115,4,3
+Africa,Morocco,4,479,26,13
+Africa,Morocco,5,1021,70,76
+Africa,Morocco,6,1661,118,177
+Africa,Algeria,1,19,0,0
+Africa,Algeria,2,48,4,12
+Africa,Algeria,3,201,17,31
+Africa,Algeria,4,511,31,65
+Africa,Algeria,5,1320,152,90
+Africa,Algeria,6,1914,293,591
+Oceania,Australia,1,76,3,21
+Oceania,Australia,2,297,3,23
+Oceania,Australia,3,1549,7,88
+Oceania,Australia,4,3984,16,244
+Oceania,Australia,5,5687,35,757
+Oceania,Australia,6,6315,60,1806
+Oceania,NZ,1,5,0,0
+Oceania,NZ,2,8,0,0
+Oceania,NZ,3,102,0,0
+Oceania,NZ,4,514,1,56
+Oceania,NZ,5,1039,1,156
+Oceania,NZ,6,1330,4,471

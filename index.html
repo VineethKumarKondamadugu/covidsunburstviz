@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+
+button {
+     background-color: darkseagreen;
+     border-radius: 8px;
+     border: 2px solid black;
+     color: black;
+     padding: 8px 25px;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+     margin: 4px 2px;
+     cursor: pointer;}
+
+button:hover {
+    background-color: crimson;
+    color: white;
+     }
+
+h2 {
+  background-color: darkseagreen;
+  padding: 8px 0;
+  border-radius: 8px;
+}
+
+div.radio-toolbar {
+  background-color: #ffbb77;
+  border-radius: 8px;
+  padding: 5px;
+}
+
+#sequence {
+  width: 600px;
+  height: 30px;
+}
+
+#sequence text {
+  font-weight: 600;
+  fill: #fff;
+}
+#my_svg {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+#my_svg path {
+  stroke: #fff;
+}
+div.tooltip {	
+    position: absolute;			
+    text-align: center;			
+    width: 150px;					
+    height: 50px;					
+    padding: 2px;				
+    font: 15px sans-serif;		
+    background: lightsteelblue;	
+    border: 0px;		
+    border-radius: 8px;			
+    pointer-events: none;			
+}	
+
+divv.tooltip {	
+    position: relative;			
+    text-align: center;			
+    width: 150px;					
+    height: 50px;					
+    padding: 2px;				
+    font: 15px sans-serif;		
+    background: lightsteelblue;	
+    border: 0px;		
+    border-radius: 8px;			
+    pointer-events: none;			
+}
+
+    .radio-toolbar {
+      margin: 10px;
+       }
+
+     .radio-toolbar input[type="radio"] {
+      opacity: 0;
+      position: fixed;
+      width: 0;
+      }
+
+    .radio-toolbar label {
+    display: inline-block;
+    background-color: #ddd;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 2px solid black;
+    border-radius: 8px;
+    }
+
+    .radio-toolbar label:hover {
+    background-color: crimson;
+    }
+
+    .radio-toolbar input[type="radio"]:focus + label {
+    border: 2px solid black;
+    }
+
+    .radio-toolbar input[type="radio"]:checked + label {
+    background-color: darkseagreen;
+    border-color: black;
+    }
+
+    .radio-toolbar select {
+    background-color: darkseagreen;
+    color: black;
+    padding: 10px;
+    width: 100px;
+    border: 2px solid black;
+    border-radius: 8px;
+    font-size: 15px;
+    -webkit-appearance: button;
+    appearance: button;
+  }
+  
+  .radio-toolbar::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    font-size: 28px;
+    line-height: 45px;
+    color: black;
+    background-color:rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+  }
+  .radio-toolbar:hover::before {
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .radio-toolbar select option {
+    padding: 30px;
+  }
+</style>
+<head>
+  <h2 align="center">CORONA VIRUS CASES STARTING MARCH</h3>
+</head>
+<body>
+<div id="sequence"></div>
+<div class="radio-toolbar" align="center">
+By the end of :
+<select id="weeks" name="weeks" align="left" onchange = Radio()>
+  <option value="f"><b><i>Week 6</i></b></option>
+  <option value="e"><b><i>Week 5</i></b></option>
+  <option value="d"><b><i>Week 4</i></b></option>
+  <option value="c"><b><i>Week 3</i></b></option>
+  <option value="b"><b><i>Week 2</i></b></option>
+  <option value="a"><b><i>Week 1</i></b></option>
+</select>
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+group sunburst by:
+  <input class="cases" id="cases" type="radio" name="m" value="cases" style ="float:center" checked>
+  <label for="cases"><b><i>Confirmed</i></b></label>
+  <input class="death" id="death" type="radio" name="m" value="death" style ="float:center">
+  <label for="death"><b><i>Deaths</i></b></label>
+  <input class="recovered" id="recovered" type="radio" name="m" value="recovered" style ="float:center">
+  <label for="recovered"><b><i>Recovered</i></b></label>
+  
+<button onclick="location.href = 'connectedscatterplot.html';" id="myButton" class="float-left submit-button" style ="float:right"><b><i>Click Here!</i></b></button>
+<span style="float:right;padding-top:15px">connected scatterplot comaprision : </span>
+</div>
+<div id="my_svg"></div>
+<script src="https://d3js.org/d3.v4.js"></script>
+<script>
+var width = 700,
+    height = 650,
+    radius = (Math.min(width, height) / 2) - 10;
+var formatNumber = d3.format(",d");
+var b = {
+  w: 140, h: 30, s: 3, t: 10
+};
+var x = d3.scaleLinear()
+    .range([0, 2 * Math.PI]);
+var y = d3.scaleSqrt()
+    .range([0, radius]);
+var color = d3.scaleOrdinal(d3.schemeCategory20);
+var partition = d3.partition();
+var arc = d3.arc()
+    .startAngle(function(d) { return Math.max(0, Math.min(2 * Math.PI, x(d.x0))); })
+    .endAngle(function(d) { return Math.max(0, Math.min(2 * Math.PI, x(d.x1))); })
+    .innerRadius(function(d) { return Math.max(0, y(d.y0)); })
+    .outerRadius(function(d) { return Math.max(0, y(d.y1)); });
+
+var svg = d3.select("#my_svg").append("svg")
+    .attr("width", width)
+    .attr("height", height)
+    .style("background", "#dcdcdc")
+    .style("margin", "auto")
+    .style("border", "3px solid black").style("border-radius", "15px")
+    .append("g")
+    .attr("id", "container")
+    .attr("transform", "translate(" + width / 2 + "," + (height / 2) + ")")
+    .style("margin", "auto")
+    .style("border", "3px solid black").style("border-radius", "15px");
+
+
+var margin = {top: 30, right: 30, bottom: 70, left: 60},
+    width1 = 700 - margin.left - margin.right,
+    height1 = 650 - margin.top - margin.bottom;
+
+
+var svgbar = d3.select("#my_svg")
+  .append("svg")
+    .attr("width", width1 + margin.left + margin.right)
+    .attr("height", height1 + margin.top + margin.bottom)
+    .style("background", "#dcdcdc")
+    .style("margin", "auto")
+    .style("border", "3px solid black").style("border-radius", "15px")
+    .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+svgbar.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y",4)
+      .attr("x",-100)
+      .attr("dy", "1em")
+      .attr("font-size", "18px")
+      .style("text-anchor", "middle")
+      .text("Total Cases");
+
+var color1 = d3.scaleOrdinal()
+    .domain(["Confirmed","Deaths","Recovered"])
+    .range(["#3CB371",'#FE5F55','#6495ed'])
+
+svgbar.selectAll(".my")
+    .data(["Confirmed","Deaths","Recovered"])
+    .enter()
+    .append("circle")
+    .attr("cx", 530)
+    .attr("cy", function(d,i){ return 10 + i*25})
+    .attr("r", 7)
+    .style("fill", function(d){ return color1(d)})
+    .classed("my", true);
+
+svgbar.selectAll(".mylabels")
+    .data(["Confirmed","Deaths","Recovered"])
+    .enter()
+    .append("text")
+    .attr("x", 540)
+    .attr("y", function(d,i){ return 10 + i*25})
+    .style("fill", function(d){ return color1(d)})
+    .text(function(d){ return d})
+    .attr("font-family", "sans-serif")
+    .attr("font-size", "18px")
+    .attr("text-anchor", "left")
+    .style("alignment-baseline", "middle")
+    .classed("mylabels", true);
+
+var x1 = d3.scaleBand()
+  .range([ 0, width1 ])
+  .padding(0.2);
+var xAxis = svgbar.append("g")
+  .attr("transform", "translate(0," + height1 + ")")
+
+var y1 = d3.scaleLinear()
+  .range([ height1, 0]);
+var yAxis = svgbar.append("g")
+  .attr("class", "myYaxis")
+
+svg.append("svg:circle")
+      .attr("r", radius)
+      .style("opacity", 0);
+
+var mode = d3.selectAll("input").property("value");
+
+
+d3.selectAll("input").on("change", function(){
+    mode = this.value;
+    Radio();
+});
+
+Radio();
+
+function Radio(){    
+d3.json('data.json', function(data) {
+  
+  initializeBreadcrumbTrail();
+
+  var divv = d3.select("body").append("div")	
+    .attr("class", "tooltip")				
+    .style("opacity", 0);
+
+
+  var v = document.getElementById("weeks").value;
+      if (v == "a"){
+          var root = d3.hierarchy(data[0]); 
+          var r = data[0];}
+      else if (v == "b"){
+          var r = data[1];
+          var root = d3.hierarchy(data[1]);}  
+      else if (v == "c"){
+          var r = data[2];
+          var root = d3.hierarchy(data[2]);}    
+      else if (v == "d"){
+          var r = data[3];
+          var root = d3.hierarchy(data[3]);}
+      else if (v == "e"){
+          var r = data[4];
+          var root = d3.hierarchy(data[4]);}
+      else{
+          var r = data[5];
+          var root = d3.hierarchy(data[5]);}
+
+     if (mode == "cases" ) { 
+      root.sum(function (d) { return d.cases; }); var arr = ["Confirmed Sunburst"];
+    } else if(mode == "death"){
+      root.sum(function (d) { return d.death; }); var arr = ["Deaths Sunburst"];
+    }else if(mode == "recovered") {root.sum(function (d) { return d.recovered});  var arr = ["Recovered Sunburst"]; }
+
+console.log(arr);
+  var tar = svg.selectAll(".mysun")
+    .data(arr);
+    tar.enter()
+    .append("text").merge(tar)
+    .attr("x", -340)
+    .attr("y", -305)
+    .style("fill", function(d){ return color1(d)})
+    .text(function(d){ return d})
+    .attr("font-family", "sans-serif")
+    .attr("font-size", "18px")
+    .attr("font-weight", 700)
+    .attr("text-anchor", "left")
+    .style("alignment-baseline", "middle")
+    .classed("mysun", true);
+
+    tar.exit().remove();
+
+  var g = svg.selectAll("path")
+      .data(partition(root).descendants())
+      .enter().append("g");
+      var path = g.append("path").attr("d", arc)
+      .style("fill", function(d) { return color((d.children ? d : d.parent).data.name); })
+      .on("click", click)
+      .on("mouseover", mouseover)
+      .on("mousemove", mousemove)
+      
+  svg.on("mouseleave", mouseleave);
+
+  updateBreadcrumbs(getParents(root),root.value);
+  click(root);
+
+ function mouseover(d){
+
+ if (mode == "cases") { 
+  divv.html("" + d.data.name + "<br>" + "confirmed: " + d.value)
+        .style("opacity", 1)
+    } else if(mode == "death"){
+      divv.html("" + d.data.name + "<br>" + "deaths: " + d.value)
+        .style("opacity", 1)
+    }else {divv.html("" + d.data.name + "<br>" + "recovered: " + d.value)
+        .style("opacity", 1)}
+
+  var sequenceArray = d.ancestors().reverse();
+
+  d3.selectAll("path").style("opacity", 0.3);
+
+  svg.selectAll("path")
+      .filter(function(node) {
+                return (sequenceArray.indexOf(node) >= 0);
+              })
+      .style("opacity", 1);
+
+  }
+
+  function mousemove(d){
+    divv
+      .style("left",  (d3.mouse(this)[0]+450)+ "px")
+     .style("top", (d3.mouse(this)[1]+450) + "px")
+  }
+
+  function mouseleave(d) {
+    divv.style("opacity", 0)
+    
+   //d3.selectAll("path").on("mouseover", null);
+   d3.selectAll("path")
+    .transition()
+    .duration(500)
+    .style("opacity", 1)
+    //.on("end", function() {
+     //       d3.select(this).on("mouseover", mouseover);
+       //   });
+  }
+
+});
+
+function getParents(a){
+  var nodeArray = [a];
+  while(a.parent){
+    nodeArray.push(a.parent);
+    a = a.parent
+  }
+  return nodeArray.reverse();
+}
+
+function click(d) {
+  console.log(d);
+  updateBreadcrumbs(getParents(d), d.value);
+  svg.transition()
+      .duration(750)
+      .tween("scale", function() {
+        var xd = d3.interpolate(x.domain(), [d.x0, d.x1]),
+            yd = d3.interpolate(y.domain(), [d.y0, 1]),
+            yr = d3.interpolate(y.range(), [d.y0 ? 20 : 0, radius]);
+        return function(t) { x.domain(xd(t)); y.domain(yd(t)).range(yr(t)); };
+      })
+    .selectAll("path")
+      .attrTween("d", function(d) { return function() { return arc(d); }; });
+
+if (d.height ==2) update(d.children);
+else if (d.height == 0) updatebar(d.data);
+else updatebar(d.data.children);
+
+}
+function initializeBreadcrumbTrail() {
+  
+  var trail = d3.select("#sequence").append("svg:svg")
+    .attr("width", width)
+    .attr("height", width/10)
+    .attr("id", "trail");
+  
+  trail.append("svg:text")
+    .attr("id", "endlabel")
+    .style("fill", "#000");
+}
+
+function updateBreadcrumbs(nodeArray, percentageString) {
+
+  var g = d3.select("#trail")
+    .selectAll("g")
+    .data(nodeArray, function(x) { return percentageString + x.data.name + x.depth; });
+
+  
+  var entering = g.enter().append("svg:g");
+
+  entering.append("svg:polygon")
+    .attr("points", breadcrumbPoints)
+    .style("fill", function(x) { return color(x.data.name); });
+
+  entering.append("svg:text")
+    .attr("x", (b.w + b.t) / 2)
+    .attr("y", b.h / 2)
+    .attr("dy", "0.35em")
+    .attr("text-anchor", "middle")
+    .text(function(x) { return x.data.name; });
+
+  entering.attr("transform", function(x, i) { return "translate(" + i* (b.w + b.s) + ", 0)"; });
+
+
+  g.exit().remove();
+
+  d3.select("#trail").select("#endlabel")
+    .attr("x", (nodeArray.length + 0.5) * (b.w + b.s))
+    .attr("y", b.h / 2)
+    .attr("dy", "0.35em")
+    .attr("text-anchor", "middle")
+    .text(percentageString);
+
+  d3.select("#trail")
+    .style("visibility", "");
+
+}
+
+function breadcrumbPoints(x, i) {
+  var points = [];
+  points.push("0,0");
+  points.push(b.w + ",0");
+  points.push(b.w + b.t + "," + (b.h / 2));
+  points.push(b.w + "," + b.h);
+  points.push("0," + b.h);
+  if (i > 0) {
+    points.push(b.t + "," + (b.h / 2));
+  }
+  return points.join(" ");
+}
+
+function update(b) {
+ 
+var e = document.getElementById("weeks").value;
+var c;
+d3.json('data1.json', function(data1) {
+  console.log(data1)
+      if (e == "a")
+       c = data1[0];
+      else if (e == "b")
+      c = data1[1];
+      else if (e == "c")
+      c = data1[2];  
+      else if (e == "d")
+      c = data1[3];
+      else if (e == "e")
+      c = data1[4];
+      else
+      c = data1[5];
+
+console.log(c)
+var subgroups = ["cases", "death", "recovered"];
+var groups = d3.map(c, function(d){return(d.name)}).keys()
+
+x1.domain(groups)
+xAxis.transition().duration(700).call(d3.axisBottom(x1)).selectAll("text")	
+        .style("text-anchor", "end")
+        .attr("dx", "-.8em")
+        .attr("dy", ".15em")
+        .attr("transform", "rotate(-65)");
+y1.domain([0, d3.max(c, function(d) { return d.cases + d.death + d.recovered})]);
+yAxis.transition().duration(700).call(d3.axisLeft(y1));
+
+var color1 = d3.scaleOrdinal()
+    .domain(subgroups)
+    .range(["#3CB371",'#FE5F55','#6495ed'])
+
+var stackedData = d3.stack()
+    .keys(subgroups)
+    (c)
+
+var div = d3.select("#my_svg").append("div")	
+    .attr("class", "tooltip")				
+    .style("opacity", 0);
+
+svgbar.selectAll(".layer").remove();
+ 
+var u = svgbar.selectAll(".layer")
+        .data(stackedData)
+        .enter().append("g")
+        .attr("class", "layer")
+        .attr("fill", function(d) { return color1(d.key); });
+    u.selectAll("rect")
+        .data(function(d) { return d; })
+        .enter().append("rect")
+        .attr("x", function(d) { return x1(d.data.name); })
+        .attr("y", function(d) { return y1(d[1]); })
+        .attr("height", function(d) { return y1(d[0]) - y1(d[1]); })
+        .attr("width",x1.bandwidth())
+        .attr("stroke", "grey")
+        .on("click", function(x){         
+          if(d3.select(this.parentNode).datum().key == "cases"){ 
+            mode = "cases"; Radio();  
+            div.transition()		
+                .duration(500)		
+                .style("opacity", 0);
+                document.getElementById("cases").checked = true;}
+          else if(d3.select(this.parentNode).datum().key == "death"){
+             mode = "death"; Radio();  
+             div.transition()		
+                .duration(500)		
+                .style("opacity", 0); 
+                document.getElementById("death").checked = true;}
+          else if(d3.select(this.parentNode).datum().key == "recovered"){ 
+            mode = "recovered"; Radio();  
+            div.transition()		
+                .duration(500)		
+                .style("opacity", 0);
+                document.getElementById("recovered").checked = true;}
+           })
+        .on("mouseover", function(d) {		
+            div.transition()		
+                .duration(500)		
+                .style("opacity", .9);		
+                div.html("group: " + d3.select(this.parentNode).datum().key + "<br>" + "Value: " + d.data[d3.select(this.parentNode).datum().key])
+                 .style("opacity", 1)	
+                 .style("left", (d3.event.pageX) + "px")		
+                 .style("top", (d3.event.pageY - 250) + "px");	
+            })					
+        .on("mouseout", function(d) {		
+            div.transition()		
+                .duration(500)		
+                .style("opacity", 0);	
+        });
+ });
+
+}
+
+function updatebar(data) {
+
+var c = data;
+if(!Array.isArray(data)){ var data=[]; data.push(c) }
+
+var subgroups = ["cases", "death", "recovered"];
+var groups = d3.map(data, function(d){return(d.name)}).keys()
+
+x1.domain(groups)
+xAxis.transition().duration(700).call(d3.axisBottom(x1)).selectAll("text")	
+        .style("text-anchor", "end")
+        .attr("dx", "-.8em")
+        .attr("dy", ".15em")
+        .attr("transform", "rotate(-65)");
+y1.domain([0, d3.max(data, function(d) { return d.cases + d.death + d.recovered})]);
+yAxis.transition().duration(700).call(d3.axisLeft(y1));
+
+var color1 = d3.scaleOrdinal()
+    .domain(subgroups)
+    .range(["#3CB371",'#FE5F55','#6495ed'])
+
+  var stackedData = d3.stack()
+    .keys(subgroups)
+    (data)
+
+var div = d3.select("#my_svg").append("div")	
+    .attr("class", "tooltip")				
+    .style("opacity", 0);
+
+ svgbar.selectAll(".layer").remove();
+ 
+ var u = svgbar.selectAll(".layer")
+        .data(stackedData)
+        .enter().append("g")
+        .attr("class", "layer")
+        .attr("fill", function(d) { return color1(d.key); });
+        u
+        .selectAll("rect")
+        .data(function(d) { return d; })
+        .enter().append("rect")
+        //.transition().duration(500)
+        .attr("x", function(d) { return x1(d.data.name); })
+        .attr("y", function(d) { return y1(d[1]); })
+        .attr("height", function(d) { return y1(d[0]) - y1(d[1]); })
+        .attr("width",x1.bandwidth())
+        .attr("stroke", "grey")
+        .on("click", function(x){         
+          if(d3.select(this.parentNode).datum().key == "cases"){ 
+            mode = "cases"; Radio();  
+            div.transition()		
+                .duration(500)		
+                .style("opacity", 0);
+                document.getElementById("cases").checked = true;}
+          else if(d3.select(this.parentNode).datum().key == "death"){
+             mode = "death"; Radio();  
+             div.transition()		
+                .duration(500)		
+                .style("opacity", 0); 
+                document.getElementById("death").checked = true;}
+          else if(d3.select(this.parentNode).datum().key == "recovered"){ 
+            mode = "recovered"; Radio();  
+            div.transition()		
+                .duration(500)		
+                .style("opacity", 0);
+                document.getElementById("recovered").checked = true;}
+           })
+        .on("mouseover", function(d) {	
+            div.transition()		
+                .duration(500)		
+                .style("opacity", .9);		
+                div.html("group: " + d3.select(this.parentNode).datum().key + "<br>" + "Value: " + d.data[d3.select(this.parentNode).datum().key])
+                 .style("opacity", 1)	
+                 .style("left", (d3.event.pageX) + "px")		
+                 .style("top", (d3.event.pageY - 250) + "px");	
+            })					
+        .on("mouseout", function(d) {		
+            div.transition()		
+                .duration(500)		
+                .style("opacity", 0);	
+        });
+}
+
+}
+d3.select(self.frameElement).style("height", height + "px");
+</script>
+</body>
